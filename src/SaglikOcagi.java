@@ -19,23 +19,24 @@ public class SaglikOcagi extends JFrame implements ActionListener {
 
 
         panel.setBounds(0,0,1200,80);
-        saLabel.setFont(new Font("Inter",Font.BOLD,40));
-        saLabel.setForeground(new Color(0xffffff));
-
-        saLabel.setBounds(360, 0, 460, 80);
-        hesapOLustur.setBounds(664, 300, 450, 200);
-        giris.setFont(new Font("Inter",Font.BOLD,32));
-        hesapOLustur.setFont(new Font("Inter",Font.BOLD,32));
-        giris.setBounds(86, 300, 450, 200);
-        giris.setForeground(new Color(0xFFFFFF));
-        hesapOLustur.setForeground(new Color(0xFFFFFF));
-        hesapOLustur.addActionListener(this);
         panel.setBackground(Color.decode("#4A4A4A"));
         this.getContentPane().setBackground(Color.LIGHT_GRAY);
-        giris.setBackground(Color.decode("#4A4A4A"));
+
+        saLabel.setFont(new Font("Inter",Font.BOLD,40));
+        saLabel.setForeground(new Color(0xffffff));
+        saLabel.setBounds(360, 0, 460, 80);
+
+        hesapOLustur.setBounds(664, 300, 450, 200);
+        hesapOLustur.setFont(new Font("Inter",Font.BOLD,32));
+        hesapOLustur.setForeground(new Color(0xFFFFFF));
         hesapOLustur.setBackground(Color.decode("#4A4A4A"));
+        hesapOLustur.addActionListener(this);
 
-
+        giris.setFont(new Font("Inter",Font.BOLD,32));
+        giris.setBounds(86, 300, 450, 200);
+        giris.setForeground(new Color(0xFFFFFF));
+        giris.setBackground(Color.decode("#4A4A4A"));
+        giris.addActionListener(this);
 
 
 
@@ -48,19 +49,19 @@ public class SaglikOcagi extends JFrame implements ActionListener {
         this.add(giris);
 
 
-
-
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == hesapOLustur){
             new HesapOlustur();
             dispose();
+        }else if (e.getSource()==giris){
+            new GirisYap();
+            dispose();
         }
+
+
     }
 }
-
-
-
-
